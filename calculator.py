@@ -9,6 +9,7 @@ class Calculator:
 
         self.equation = Entry(master, width=36, borderwidth=5)
         self.equation.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+        self.createButton()
         
 
     def createButton(self):
