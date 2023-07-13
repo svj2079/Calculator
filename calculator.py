@@ -44,9 +44,25 @@ class Calculator:
                 c+=1
             r+=1
 
+
     def addButton(self, value):
 
-        return Button(self.master, text=value, width=9)
+        return Button(self.master, text=value, width=9, command = lambda: self.clickButton(str(value)))
+
+
+    def clickButton(self, value):
+
+        current_equation = str(self.equation.get())
+
+        if value == 'c':
+            self.equation.delete(-1, END)
+        elif value == '=':
+            answer = str(eval(current_equation))
+            self.equation.delete(-1, END)
+            self.equation.insert(0, answer)
+        else:
+            self.equation.delete(0, END)
+            self.equation.insert(-1, current_equation+value)
 
 
 if __name__=='__main__':
