@@ -11,7 +11,9 @@ class Calculator:
         self.equation.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
         
 
-    def createButton(self):
+    def createButton(self, value):
+
+        return Button(self.master, text=value, width=9)
 
         b0 = self.addButton(0)
         b1 = self.addButton(1)
@@ -42,7 +44,7 @@ class Calculator:
                 buttn.grid(row=r, column=c, columnspan=1)
                 c+=1
             r+=1
-            
+
 
 if __name__=='__main__':
 
