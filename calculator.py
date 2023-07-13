@@ -12,10 +12,10 @@ class Calculator:
         master.title("Python Calculator")
 
         #Create a line where we display the equation
-        self.equation = Entry(master, width=36, borderwidth=5)
+        self.equation = Entry(master, width=72, borderwidth=10)
         
         #Assign a position for the equation line in the grey application window
-        self.equation.grid(row=0, column=0, columnspan=4, padx=10, pady=10)
+        self.equation.grid(row=0, column=0, columnspan=8, padx=20, pady=20)
         
         #Execute the .creteButton() method
         self.createButton()
@@ -61,7 +61,7 @@ class Calculator:
     def addButton(self, value):
 
         #return Button(self.master, text=value, width=9)=>
-        return Button(self.master, text=value, width=9, command = lambda: self.clickButton(str(value)))
+        return Button(self.master, text=value, width=18, command = lambda: self.clickButton(str(value)))
 
 
     def clickButton(self, value):
